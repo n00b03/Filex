@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Image - Filex</title>
+    <link rel="stylesheet" href="crop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-regular fa-chess-queen"></i>
+            <h1>Filex - Image Cropper</h1>
+        </div>
+        <button onclick="window.location.href='index.html'" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Editor
+        </button>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="upload-section animate-fade-in">
+                <h2><i class="fas fa-crop-alt"></i> Crop Image</h2>
+                <div class="upload-area" id="cropDropArea">
+                    <input type="file" id="cropImageUpload" accept="image/*">
+                    <div class="upload-prompt">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drop your image here or click to browse</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="crop-editor">
+                <div class="preview-container">
+                    <div class="image-preview">
+                        <img id="cropImage" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="rotateLeftBtn" class="btn-with-icon">
+                        <i class="fas fa-undo"></i> Rotate Left
+                    </button>
+                    <button id="rotateRightBtn" class="btn-with-icon">
+                        <i class="fas fa-redo"></i> Rotate Right
+                    </button>
+                    <button id="flipHorizontalBtn" class="btn-with-icon">
+                        <i class="fas fa-arrows-alt-h"></i> Flip H
+                    </button>
+                    <button id="flipVerticalBtn" class="btn-with-icon">
+                        <i class="fas fa-arrows-alt-v"></i> Flip V
+                    </button>
+                    <button id="cropBtn" class="btn-with-icon" disabled>
+                        <i class="fas fa-crop"></i> Crop
+                    </button>
+                    <button id="downloadCroppedBtn" class="btn-with-icon" disabled>
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="crop.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a56d4;
+    --background: #f5f7ff;
+    --card-bg: #ffffff;
+    --text: #333333;
+    --border: #e1e4e8;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary);
+    padding: 0 2rem;
+    height: 64px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    line-height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.upload-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    animation: slideDown 0.5s ease;
+}
+
+.upload-area {
+    border: 2px dashed var(--primary);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 1rem;
+}
+
+.upload-area:hover {
+    background: rgba(67, 97, 238, 0.05);
+}
+
+.upload-prompt i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.watermark-editor {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    animation: slideUp 0.5s ease;
+}
+
+.preview-container {
+    margin-bottom: 2rem;
+}
+
+.image-preview {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.image-preview img, 
+.image-preview canvas {
+    max-width: 100%;
+    display: block;
+}
+
+.brush-controls {
+    margin-top: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.slider-control {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.slider-control input {
+    width: 100%;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-with-icon {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.3s;
+}
+
+.btn-with-icon:hover {
+    background: var(--primary-dark);
+}
+
+.btn-with-icon:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem auto;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-with-icon {
+        width: 100%;
+        justify-content: center;
+    }
+}
